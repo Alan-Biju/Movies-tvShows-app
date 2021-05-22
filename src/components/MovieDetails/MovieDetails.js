@@ -97,7 +97,7 @@ const MovieDetails = () => {
 										color: '  #ffc500',
 									}}
 								/>
-								<p>{`${details.vote_average}/10`}</p>
+								<p>{`${details.vote_average}/10 ||'0'`}</p>
 							</Rating>
 							<Release>
 								<MdDateRange style={{ color: '#c21500' }} />
@@ -109,13 +109,13 @@ const MovieDetails = () => {
 							</Release>
 							<Status>
 								<FaRegQuestionCircle style={{ color: '#4b6cb7' }} />
-								<p>{details.status}</p>
+								<p>{details.status || 'Not mentioned'}</p>
 							</Status>
 							<Language>
 								<MdLanguage size={18} style={{ color: '#009B77' }} />
 								<p>
 									{details &&
-										details.spoken_languages[0].english_name}
+										details.spoken_languages[0].english_name|| '🤗'}
 								</p>
 							</Language>
 						</div>
