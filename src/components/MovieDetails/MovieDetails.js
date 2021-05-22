@@ -30,11 +30,10 @@ const MovieDetails = () => {
 			)
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data);
 					setDetails(data);
 				});
 		} catch (error) {
-			console.log(error + 'from details');
+			console.log(error);
 		}
 
 		try {
@@ -43,11 +42,10 @@ const MovieDetails = () => {
 			)
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data);
 					setCasts(data);
 				});
 		} catch (error) {
-			console.log(error + 'from cast');
+			console.log(error );
 		}
 	};
 	useEffect(() => {
