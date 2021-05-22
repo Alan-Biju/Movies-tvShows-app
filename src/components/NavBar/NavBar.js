@@ -32,7 +32,7 @@ function NavBar () {
 				.then((data) => setData(data));
 			setPageButton(true);
 		} catch (error) {
-			console.log(error + 'from nav');
+			console.log(error);
 			setData(data);
 		}
 	};
