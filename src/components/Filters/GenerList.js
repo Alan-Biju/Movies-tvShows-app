@@ -20,7 +20,6 @@ function GenerList({ datas, name }) {
 	// eslint-disable-next-line no-unused-vars
 	const [category, setCategory] = Category;
 	const FetchData = (id) => {
-		console.log('innav');
 		try {
 			fetch(
 				`https://api.themoviedb.org/3/discover/${category}?api_key=${Api}&with_genres=${id}  `,
