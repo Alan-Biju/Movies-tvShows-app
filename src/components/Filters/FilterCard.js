@@ -32,7 +32,7 @@ function FilterCard({ datas, name }) {
 					setPageButton(false);
 				});
 		} catch (error) {
-			console.log(error + 'from nav');
+			console.log(error);
 			setData(data);
 		}
 	};
