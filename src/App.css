@@ -1,9 +1,0 @@
-/* 'https://api.themoviedb.org/3/search/movie?api_key=84e826934d86626ac5c5d04c51830f3d&query=Jack+Reacher', to search single movie*/
-/* 'https://api.themoviedb.org/3/search/movie?query=Avengers&api_key=84e826934d86626ac5c5d04c51830f3d&page=1', to search movie name and other movies*/
-/* http://image.tmdb.org/t/p/w500/hUzeosd33nzE5MCNsZxCGEKTXaQ.png  to get images from the api data */
-/* https://api.themoviedb.org/3/movie/popular?api_key=84e826934d86626ac5c5d04c51830f3d   popular movies */
-/* https://api.themoviedb.org/3/movie/top_rated?api_key=84e826934d86626ac5c5d04c51830f3d&page=2 */
-/* https://api.themoviedb.org/3/discover/movie?api_key=84e826934d86626ac5c5d04c51830f3d&with_genres=12  with geners */
-/* 28 action  12 adven 16 anima 35 comdy  80 crime 18 drama 10751 famliy 27 horrer 878 scinec 53 thiller  */
-/* #B8B5FF*/
-/* https://api.themoviedb.org/3/movie/567189?api_key=84e826934d86626ac5c5d04c51830f3d&append_to_response=videos   to get full details and movie video from it using id */
