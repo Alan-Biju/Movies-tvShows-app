@@ -148,9 +148,9 @@ const MovieDetails = () => {
 					<Cast casts={casts} />
 				</MovieTextContainer>
 			</MovieDetailsContanier>
-			{details && trailer && (
+			{details && trailer && details.videos.results.length > 0 &&(
 				<Youtube
-					link={details.videos.results[0].key}
+					link={ details.videos.results[0].key }
 					state={[trailer, setTrailer]}
 				/>
 			)}
