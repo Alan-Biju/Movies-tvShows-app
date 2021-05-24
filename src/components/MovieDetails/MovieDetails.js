@@ -11,6 +11,8 @@ import {
 import { MdDateRange, MdLanguage } from 'react-icons/md';
 import Cast from './Cast';
 import Youtube from './Youtube';
+import ErrorMessage from './ErrorMessage';
+
 
 const MovieDetails = () => {
 	const { PageButton ,Api} = useContext(MovieDataContext);
@@ -148,11 +150,11 @@ const MovieDetails = () => {
 					<Cast casts={casts} />
 				</MovieTextContainer>
 			</MovieDetailsContanier>
-			{details && trailer && details.videos.results.length > 0 &&(
-				<Youtube
-					link={ details.videos.results[0].key }
+			{details && trailer && (
+			    details.videos.results.length > 0?	<Youtube
+					link={details.videos.results[0].key}
 					state={[trailer, setTrailer]}
-				/>
+				/> : (<ErrorMessage state={ [trailer, setTrailer] } />)
 			)}
 		</>
 	);
