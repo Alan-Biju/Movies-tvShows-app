@@ -97,7 +97,7 @@ const MovieDetails = () => {
 										color: '  #ffc500',
 									}}
 								/>
-								<p>{`${details.vote_average}/10 ||'0'`}</p>
+								<p>{`${details.vote_average || '0'}/10`}</p>
 							</Rating>
 							<Release>
 								<MdDateRange style={{ color: '#c21500' }} />
