@@ -116,8 +116,8 @@ const MovieDetails = () => {
 							<Language>
 								<MdLanguage size={18} style={{ color: '#009B77' }} />
 								<p>
-									{(details && details.spoken_languages[0].english_name) ||
-										'🤗'}
+								   {'Unknown  😎' || (details && details.spoken_languages[0].english_name)}
+
 								</p>
 							</Language>
 						</div>
