@@ -29,7 +29,7 @@ function App() {
 const AppContainer = styled.div`
 	width: 100%;
 	min-height: 100vh;
-	background:#fcfcfc;	
+	background:#fcfcf9;	
 	position: relative;
 `;
 export default App;
