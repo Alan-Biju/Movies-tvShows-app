@@ -101,9 +101,10 @@ const ButtonContainer = styled.div`
 	}
 `;
 const Page = styled.p`
+	color: ${(prop) => prop.theme.MainFontColor};
 	@media (max-width: 590px) {
 		width: 80px;
-		font-size:0.7rem;
-		text-align:center;
+		font-size: 0.7rem;
+		text-align: center;
 	}
 `;
