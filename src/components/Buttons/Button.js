@@ -20,7 +20,6 @@ function Button() {
 				.then((response) => response.json())
 				.then((data) => setData(data));
 		} catch (error) {
-			console.log(error + 'from button');
 			setData(data);
 		}
 	};

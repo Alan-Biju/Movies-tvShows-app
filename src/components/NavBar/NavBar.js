@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import NavBarIcon from './NavBarIcon';
 import { MovieDataContext } from '../../MovieDataContext';
 import { BiCameraMovie, BiMovie, BiSearchAlt } from 'react-icons/bi';
-import { NavLink ,useHistory,Link} from 'react-router-dom';
+import { NavLink, useHistory, Link } from 'react-router-dom';
 import Button from '../Buttons/Button';
+import ToggleButton from './ToggleButton';
 const styles = {
 	color: '#ffffff',
-	
 };
 
-function NavBar () {
+function NavBar({ setDark, dark }) {
 	const history = useHistory();
 	const [search, setSearch] = useState('');
-	const { Data, Category, PageButton,Api } = useContext(MovieDataContext);
+	const { Data, Category, PageButton, Api } = useContext(MovieDataContext);
 	const [data, setData] = Data;
 	const [category, setCategory] = Category;
 	const [pageButton, setPageButton] = PageButton;
@@ -21,7 +21,7 @@ function NavBar () {
 	const Navstyle = {
 		color: '#B8B5FF',
 		textDecoration: 'line-through',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
 	};
 	const FetchData = (urlData, pageno) => {
 		try {
@@ -32,7 +32,6 @@ function NavBar () {
 				.then((data) => setData(data));
 			setPageButton(true);
 		} catch (error) {
-			console.log(error);
 			setData(data);
 		}
 	};
@@ -44,37 +43,14 @@ function NavBar () {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data + 'from nav');
 				setData(data);
 				setSearch('');
 				history.push('/');
 				setPageButton(false);
 			})
 			.catch((err) => {
-				console.error(err);
 				setSearch('');
 			});
-		/* fetch(
-			`https://advanced-${category}-search.p.rapidapi.com/search/movie?query=${search}&page=1`,
-			{
-				method: 'GET',
-				headers: {
-					'x-rapidapi-key':
-						'4362a2ee76msh73f8bb9f06910bbp1502a6jsnd43a18dc470c',
-					'x-rapidapi-host': 'advanced-movie-search.p.rapidapi.com',
-				},
-			},
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data + 'from nav');
-				setData(data);
-				setSearch('');
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-		 */
 	};
 	return (
 		<>
@@ -84,6 +60,9 @@ function NavBar () {
 						<Link to='/'>
 							<NavBarIcon />
 						</Link>
+						<Icon>
+							<ToggleButton isDarkMode={dark} setIsDarkMode={setDark} />
+						</Icon>
 					</Icons>
 					<Icons
 						onClick={() => {
@@ -148,8 +127,9 @@ const NavIconContainer = styled.ul`
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: nowrap;
-	width: 330px;
-	padding: 5px;
+	width: 340px;
+	padding:0 5px;
+	height: 100%;
 	@media (max-width: 600px) {
 		width: 100%;
 		justify-content: space-between;
@@ -159,7 +139,7 @@ const Icons = styled.li`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 160px;
+	width: 170px;
 	color: white;
 	cursor: pointer;
 	flex-wrap: nowrap;
@@ -175,6 +155,12 @@ const Icons = styled.li`
 		width: 100px;
 		transform: none;
 	}
+`;
+const Icon = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 15px;
 `;
 const NavSearchContainer = styled.div`
 	display: flex;

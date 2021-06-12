@@ -13,9 +13,8 @@ import Cast from './Cast';
 import Youtube from './Youtube';
 import ErrorMessage from './ErrorMessage';
 
-
 const MovieDetails = () => {
-	const { PageButton ,Api} = useContext(MovieDataContext);
+	const { PageButton, Api } = useContext(MovieDataContext);
 	// eslint-disable-next-line no-unused-vars
 	const [Button, setButton] = PageButton;
 	const [details, setDetails] = useState('');
@@ -35,7 +34,7 @@ const MovieDetails = () => {
 					setDetails(data);
 				});
 		} catch (error) {
-			console.log(error);
+			console.log(error + 'from details');
 		}
 
 		try {
@@ -47,7 +46,7 @@ const MovieDetails = () => {
 					setCasts(data);
 				});
 		} catch (error) {
-			console.log(error );
+			console.log(error + 'from cast');
 		}
 	};
 	useEffect(() => {
@@ -117,7 +116,6 @@ const MovieDetails = () => {
 								<MdLanguage size={18} style={{ color: '#009B77' }} />
 								<p>
 									{ (details && details.spoken_languages.length>0 && details.spoken_languages[0].english_name) || 'Unknown  😎' }
-
 								</p>
 							</Language>
 						</div>
@@ -150,12 +148,16 @@ const MovieDetails = () => {
 					<Cast casts={casts} />
 				</MovieTextContainer>
 			</MovieDetailsContanier>
-			{details && trailer && (
-			    details.videos.results.length > 0?	<Youtube
-					link={details.videos.results[0].key}
-					state={[trailer, setTrailer]}
-				/> : (<ErrorMessage state={ [trailer, setTrailer] } />)
-			)}
+			{details &&
+				trailer &&
+				(details.videos.results.length > 0 ? (
+					<Youtube
+						link={details.videos.results[0].key}
+						state={[trailer, setTrailer]}
+					/>
+				) : (
+					<ErrorMessage state={[trailer, setTrailer]} />
+				))}
 		</>
 	);
 };
@@ -233,7 +235,7 @@ const MovieTextContainer = styled.div`
 `;
 const TextBox = styled.div`
 	h2 {
-		color: #000000;
+		color: ${(prop) => prop.theme.MainFontColor};
 		font-family: 'Raleway', sans-serif;
 		font-weight: 600;
 		letter-spacing: 1px;
@@ -264,6 +266,7 @@ const Rating = styled.div`
 		font-family: 'Raleway', sans-serif;
 		font-size: 0.8rem;
 		font-weight: 600;
+		color: ${(prop) => prop.theme.MainFontColor};
 		@media (max-width: 500px) {
 			font-size: 0.6rem;
 		}
@@ -287,12 +290,14 @@ const OverView = styled.div`
 		font-size: 1rem;
 		font-weight: 600;
 		padding: 5% 0 3% 0;
+		color: ${(prop) => prop.theme.MainFontColor};
 	}
 	h3,
 	p {
 		font-family: 'Poppins', sans-serif;
 		font-size: 0.7rem;
 		letter-spacing: 1px;
+		color: ${(prop) => prop.theme.secondaryFontColor};
 	}
 	h3 {
 		padding: 3% 0;

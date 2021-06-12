@@ -6,7 +6,7 @@ const MovieProvider = (props) => {
 	const [data, setData] = useState('');
 	const [button,setButton]=useState(true)
     useEffect(() => {
-        console.log('Every body say aaa from context');
+        console.log('Every body say aaa from context Api');
 	try {
         fetch(
 					`https://api.themoviedb.org/3/movie/popular?api_key=${Api} `,

@@ -78,10 +78,10 @@ const CardMainContainer = styled.div`
 const CardContainer = styled.div`
 	width: 230px;
 	height: 390px;
-	background-color: #fcfcfc;
+	background-color: ${(prop) => prop.theme.MainBackground};
 	overflow: hidden;
 	border-radius: 10px;
-	border: 1px solid #e3e3e3;
+	border: 1px solid ${(prop) => prop.theme.Cardborder};
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	transition-duration: 0.3s;
 	&:hover {
@@ -98,14 +98,14 @@ const CardContainer = styled.div`
 		font-weight: 600;
 		padding: 0px;
 		white-space: nowrap;
-		
+		color: ${(prop) => prop.theme.MainFontColor};
 	}
 `;
 const TextContainer = styled.div`
 	padding: 3px;
 	font-size: 0.6rem;
 	font-weight: 600;
-	color: #4c4444;
+	color: ${(prop) => prop.theme.secondaryFontColor};
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;

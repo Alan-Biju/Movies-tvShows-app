@@ -32,7 +32,6 @@ function FilterCard({ datas, name }) {
 					setPageButton(false);
 				});
 		} catch (error) {
-			console.log(error);
 			setData(data);
 		}
 	};
@@ -45,9 +44,9 @@ function FilterCard({ datas, name }) {
 				}}>
 				<Title>{name}</Title>
 				{drop ? (
-					<MdKeyboardArrowDown style={{ color: '#000000' }} size={25} />
+					<Down   size={25} />
 				) : (
-					<MdKeyboardArrowRight style={{ color: '#000000' }} size={25} />
+					<Right  size={25} />
 				)}
 			</FilterCardContainer>
 			{drop ? (
@@ -84,23 +83,34 @@ export const FilterCardContainer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	padding: 14px 16px;
-	border: 1px solid #e3e3e3;
+	border: 1px solid ${(prop) => prop.theme.Cardborder};
 	cursor: pointer;
 	transition-duration: 0.3s;
+	transition: background-color 0.8s ease;
+	background-color: ${(prop) => prop.theme.sideBarBackground};
 	p {
 		font-size: 0.7rem;
 		font-weight: 400;
 		letter-spacing: 1px;
 		text-transform: capitalize;
+		color: ${(prop) => prop.theme.secondaryFontColor};
 	}
 	&:hover {
-		background-color: #b8b5ff;
+		background-color: ${(prop) => prop.theme.HoverSideBar};
 	}
-	&:first-child,&:last-child {
-		background-color:transparent;
+	&:first-child,
+	&:last-child {
+		background-color: transparent;
 	}
 `;
 const Title = styled.h5`
 	font-size: 0.8rem;
 	font-weight: 600;
+	color: ${(prop) => prop.theme.MainFontColor};
+`;
+const Down = styled(MdKeyboardArrowDown)`
+	color: ${(prop) => prop.theme.MainFontColor};
+`;
+const Right = styled(MdKeyboardArrowRight)`
+	color: ${(prop) => prop.theme.MainFontColor};
 `;

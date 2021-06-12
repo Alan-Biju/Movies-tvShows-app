@@ -41,7 +41,8 @@ const Title = styled.p`
 	letter-spacing: 1px;
 	font-size: 1rem;
 	font-weight: 600;
-	padding: 2% 0 2% 0;
+	padding: 2% 0px 2% 0px;
+	color: ${(prop) => prop.theme.MainFontColor};
 `;
 const CastBox = styled.div`
 	display: grid;
@@ -59,7 +60,6 @@ const CastCard = styled.div`
 	img {
 		width: 40px;
 		border-radius: 5px;
-		
 	}
 	p {
 		font-size: 0.6rem;
@@ -67,5 +67,6 @@ const CastCard = styled.div`
 		letter-spacing: 1px;
 		margin: 0 0 0 5%;
 		white-space: nowrap;
+		color: ${(prop) => prop.theme.secondaryFontColor};
 	}
 `;
