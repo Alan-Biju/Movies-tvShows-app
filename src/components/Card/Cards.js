@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { MovieDataContext } from '../../MovieDataContext';
-
+import { SemipolarLoading } from 'react-loadingg';
 
 const Cards = ({ Movies}) => {
 		const {  Category } = useContext(MovieDataContext);
@@ -38,21 +38,19 @@ const Cards = ({ Movies}) => {
 								/>
 
 								<h2>{movie.original_title || movie.name}</h2>
-								<BottomDetails to={ `/info/${category}/${ movie.id }` }   >
-								
-										<TextContainer>
-											<p>{`Rating:${movie.vote_average}`}</p>
-											<p>{`Date:${release_date}`}</p>
-										</TextContainer>
-										<RiArrowRightSLine />
-									
+								<BottomDetails to={`/info/${category}/${movie.id}`}>
+									<TextContainer>
+										<p>{`Rating:${movie.vote_average}`}</p>
+										<p>{`Date:${release_date}`}</p>
+									</TextContainer>
+									<RiArrowRightSLine />
 								</BottomDetails>
 							</CardContainer>
 						);
 					})
 				) : (
 					<Warning>
-						<img title='untitled-5.gif' src='loading.gif' alt='Untitled 5' />
+						<SemipolarLoading size='large' color='#7868E6' />
 					</Warning>
 				)}
 			</CardMainContainer>
