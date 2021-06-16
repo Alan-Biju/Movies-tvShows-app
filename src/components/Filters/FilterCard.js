@@ -61,7 +61,10 @@ function FilterCard({ datas, name }) {
 						}
 						
 						return (
-							<FilterCardContainer key={ idx } onClick={()=>{FetchData(urlData);}}>
+							<FilterCardContainer key={ idx } onClick={ () => {
+								FetchData(urlData);
+								setDrop(false);
+							} }>
 								<p>{data.title}</p>
 								<MdArrowForward style={styles} size={15} />
 							</FilterCardContainer>

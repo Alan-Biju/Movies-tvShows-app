@@ -12,7 +12,7 @@ const styles = {
 };
 function GenerList({ datas, name }) {
 	const [drop, setDrop] = useState(false);
-	const { Data, Category, PageButton ,Api} = useContext(MovieDataContext);
+	const { Data, Category, PageButton, Api } = useContext(MovieDataContext);
 	const [data, setData] = Data;
 	// eslint-disable-next-line no-unused-vars
 	const [pageButton, setPageButton] = PageButton;
@@ -52,6 +52,7 @@ function GenerList({ datas, name }) {
 								key={idx}
 								onClick={() => {
 									FetchData(data.id);
+									setDrop(false);
 								}}>
 								<p>{data.title}</p>
 								<MdArrowForward style={styles} size={15} />

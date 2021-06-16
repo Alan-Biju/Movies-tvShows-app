@@ -4,19 +4,18 @@ import { VscChromeClose } from 'react-icons/vsc';
 
 function Youtube({ link, state }) {
 	const [trailer, setTrailer] = state;
-console.log(link);
- 
+
 	return (
 		<YoutubeContainer>
 			<iframe
 				width='560'
 				height='315'
-				src={ `https://www.youtube.com/embed/${ link }` }
+				src={`https://www.youtube.com/embed/${link}`}
 				title='YouTube video player'
 				frameBorder='0'
 				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 				allowFullScreen></iframe>
-			<Close onClick={()=>setTrailer(!trailer)}>
+			<Close onClick={() => setTrailer(!trailer)}>
 				<VscChromeClose size={30} style={{ color: 'black' }} />
 			</Close>
 		</YoutubeContainer>

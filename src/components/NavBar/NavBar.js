@@ -128,7 +128,7 @@ const NavIconContainer = styled.ul`
 	justify-content: space-around;
 	flex-wrap: nowrap;
 	width: 340px;
-	padding:0 5px;
+	padding: 0 5px;
 	height: 100%;
 	@media (max-width: 600px) {
 		width: 100%;

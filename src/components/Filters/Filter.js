@@ -23,6 +23,7 @@ const FilterContainer = styled.div`
 	width: 240px;
 	height: fit-content;
 	padding: 5px 0;
+	z-index:10;
 	@media (max-width: 510px) {
 		width: 95vw;
 		position: static;

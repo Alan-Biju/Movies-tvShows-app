@@ -88,7 +88,7 @@ const MovieDetails = () => {
 					<TextBox>
 						<h2>{details.title || details.original_name}</h2>
 						<a href={details.homepage}>
-							More Info <FaCaretRight />{' '}
+							More Info <FaCaretRight />
 						</a>
 						<div>
 							<Rating>

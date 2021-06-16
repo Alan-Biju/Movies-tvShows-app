@@ -7,7 +7,7 @@ import { SemipolarLoading } from 'react-loadingg';
 
 const Cards = ({ Movies}) => {
 		const {  Category } = useContext(MovieDataContext);
-				const [category] = Category;
+	const [category] = Category;
 	return (
 		<>
 			<CardMainContainer>
@@ -118,7 +118,7 @@ const TextContainer = styled.div`
 		font-family: 'Raleway', sans-serif;
 	}
 `;
-const Warning = styled.p`
+const Warning = styled.div`
 	position: absolute;
 	top: 50%;
 	left: 50%;
