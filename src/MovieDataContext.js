@@ -13,7 +13,7 @@ const MovieProvider = (props) => {
 				)
 					.then((response) => response.json())
 					.then((data) => {
-						setData(data);
+						setData(data);					
 					});
 						
         

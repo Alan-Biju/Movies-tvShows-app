@@ -3,56 +3,86 @@ import styled from 'styled-components';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { MovieDataContext } from '../../MovieDataContext';
-import { SemipolarLoading } from 'react-loadingg';
-
+import { MovieData } from './BackupData';
 const Cards = ({ Movies}) => {
 		const {  Category } = useContext(MovieDataContext);
 	const [category] = Category;
 	return (
 		<>
 			<CardMainContainer>
-				{Movies && Movies.length > 0 && Movies ? (
-					Movies.map((movie, index) => {
-						const day = new Date(
-							movie.release_date || movie.first_air_date,
-						).toLocaleString('en-US', {
-							day: '2-digit',
-						});
-						const year = new Date(
-							movie.release_date || movie.first_air_date,
-						).getFullYear();
-						const month = new Date(
-							movie.release_date || movie.first_air_date,
-						).toLocaleString('en-US', {
-							month: 'short',
-						});
-						const release_date = `${month} ${day} , ${year}`;
-						return (
-							<CardContainer key={index}>
-								<img
-									src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-									onError={(e) => {
-										e.target.src = 'Alt.jpg';
-									}}
-									alt='Sorry it Was a Img'
-								/>
+				{Movies && Movies.length > 0 && Movies
+					? Movies.map((movie, index) => {
+							const day = new Date(
+								movie.release_date || movie.first_air_date,
+							).toLocaleString('en-US', {
+								day: '2-digit',
+							});
+							const year = new Date(
+								movie.release_date || movie.first_air_date,
+							).getFullYear();
+							const month = new Date(
+								movie.release_date || movie.first_air_date,
+							).toLocaleString('en-US', {
+								month: 'short',
+							});
+							const release_date = `${month} ${day} , ${year}`;
+							return (
+								<CardContainer key={index}>
+									<img
+										src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+										onError={(e) => {
+											e.target.src = 'Alt.jpg';
+										}}
+										alt='Sorry it Was a Img'
+									/>
 
-								<h2>{movie.original_title || movie.name}</h2>
-								<BottomDetails to={`/info/${category}/${movie.id}`}>
-									<TextContainer>
-										<p>{`Rating:${movie.vote_average}`}</p>
-										<p>{`Date:${release_date}`}</p>
-									</TextContainer>
-									<RiArrowRightSLine />
-								</BottomDetails>
-							</CardContainer>
-						);
-					})
-				) : (
-					<Warning>
-						<SemipolarLoading size='large' color='#7868E6' />
-					</Warning>
-				)}
+									<h2>{movie.original_title || movie.name}</h2>
+									<BottomDetails to={`/info/${category}/${movie.id}`}>
+										<TextContainer>
+											<p>{`Rating:${movie.vote_average}`}</p>
+											<p>{`Date:${release_date}`}</p>
+										</TextContainer>
+										<RiArrowRightSLine />
+									</BottomDetails>
+								</CardContainer>
+							);
+					  })
+					: MovieData.map((movie, index) => {
+							const day = new Date(
+								movie.release_date || movie.first_air_date,
+							).toLocaleString('en-US', {
+								day: '2-digit',
+							});
+							const year = new Date(
+								movie.release_date || movie.first_air_date,
+							).getFullYear();
+							const month = new Date(
+								movie.release_date || movie.first_air_date,
+							).toLocaleString('en-US', {
+								month: 'short',
+							});
+							const release_date = `${month} ${day} , ${year}`;
+							return (
+								<CardContainer key={index}>
+									<img
+										src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+										onError={(e) => {
+											e.target.src = 'Alt.jpg';
+										}}
+										alt='Sorry it Was a Img'
+									/>
+
+									<h2>{movie.original_title || movie.name}</h2>
+									<BottomDetails to={`/info/${category}/${movie.id}`}>
+										<TextContainer>
+											<p>{`Rating:${movie.vote_average}`}</p>
+											<p>{`Date:${release_date}`}</p>
+										</TextContainer>
+										<RiArrowRightSLine />
+									</BottomDetails>
+								</CardContainer>
+							);
+					  })}
 			</CardMainContainer>
 		</>
 	);
@@ -116,18 +146,6 @@ const TextContainer = styled.div`
 		font-weight: bold;
 		padding-left: 5px;
 		font-family: 'Raleway', sans-serif;
-	}
-`;
-const Warning = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 84px;
-	height: 84px;
-	img {
-		width: 100%;
-		height: 100%;
 	}
 `;
 

@@ -1,4 +1,4 @@
-import React, { useContext, useState,useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { MovieDataContext } from '../../MovieDataContext';
@@ -9,13 +9,15 @@ function Button() {
 	// eslint-disable-next-line no-unused-vars
 	const [category, setCategory] = Category;
 	const [pageNo, setPageNo] = useState(1);
-    useEffect(() => {
-    setPageNo(1)
-},[category])
+	useEffect(() => {
+		setPageNo(1);
+	}, [category]);
 	const FetchData = (urlData, pageno) => {
 		try {
 			fetch(
-				`https://api.themoviedb.org/3/${category}/popular?api_key=84e826934d86626ac5c5d04c51830f3d&page=${pageNo+1} `,
+				`https://api.themoviedb.org/3/${category}/popular?api_key=84e826934d86626ac5c5d04c51830f3d&page=${
+					pageNo + 1
+				} `,
 			)
 				.then((response) => response.json())
 				.then((data) => setData(data));
@@ -24,8 +26,7 @@ function Button() {
 		}
 	};
 
-    function changePrev () {
-        console.log(pageNo);
+	function changePrev() {
 		if (pageNo > 1) {
 			setPageNo(pageNo - 1);
 			FetchData();
@@ -70,10 +71,10 @@ const ButtonContainer = styled.div`
 		width: calc(100% - 280px);
 		margin: 10px;
 	}
-	@media (max-width:510px){
-		width:90%;
-		margin:0 auto;
-		float:none;
+	@media (max-width: 510px) {
+		width: 90%;
+		margin: 0 auto;
+		float: none;
 	}
 	button {
 		background: #326aeb;
@@ -96,7 +97,7 @@ const ButtonContainer = styled.div`
 		}
 		@media (max-width: 590px) {
 			width: 80px;
-			margin:0;
+			margin: 0;
 		}
 	}
 `;
