@@ -1,3 +1,23 @@
+# Live Link
+https://movieprime.netlify.app/
+
+# User-Story
+React Js HTML styled components(CSS) FireBase MovieDB(API) javascript git
+
+Modern fast movie database web app with React using The Movie DB API and completely responsive User Story : Users can search for movies and Tv Shows
+Users can see upcoming movies ,Tv Shows in Home Page and users can also see Clicking on specific movies bring you all data about the movie including
+actors, durations, budget, rating and many more. Use the Search bar to find you favorites movies and their information Note: API may fail to fetch sometimes 😅
+
+
+# ScreenShot
+![movieprime netlify app_ (1)](https://user-images.githubusercontent.com/67945306/129683724-f9fd65e4-b3b4-4def-bfc2-9caaec5b0f57.png)  
+
+![movieprime netlify app_](https://user-images.githubusercontent.com/67945306/129683730-4e86d504-625b-4504-89a8-d72eb84e81e8.png)
+
+![movieprime netlify app_(iPhone 6_7_8 Plus) (1)](https://user-images.githubusercontent.com/67945306/129683734-b9761371-3c31-4b4b-a648-4b18b6d2c230.png)
+
+![movieprime netlify app_(iPhone 6_7_8 Plus)](https://user-images.githubusercontent.com/67945306/129683744-2fb183b4-a1ea-4a81-b70c-19e7eadc147b.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
